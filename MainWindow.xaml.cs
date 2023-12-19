@@ -1,27 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Ports;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Media.Media3D;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace VIM
 {
-    
+
     public partial class MainWindow : Window
     {
 
@@ -100,6 +91,7 @@ namespace VIM
         }
         #endregion
 
+        #region Send Parameters to Serial Port
         async void writeStr()
         {
 
@@ -123,6 +115,7 @@ namespace VIM
             });
 
         }
+        #endregion
 
         #region Serial Port receiver method
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -237,6 +230,7 @@ namespace VIM
         }
         #endregion
 
+        #region Capture method Trigger
         private void CaptureTrigger()
         {
 
@@ -249,7 +243,9 @@ namespace VIM
             }
 
         }
+        #endregion
 
+        #region Display method Trigger
         private void DisplayInput()
         {
 
@@ -260,7 +256,9 @@ namespace VIM
             }
 
         }
+        #endregion
 
+        #region Resize Python method Trigger
         private void ResizePY()
         {
 
@@ -271,7 +269,9 @@ namespace VIM
             }
 
         }
+        #endregion
 
+        #region Background Removal Pythod method Trigger
         private void bgPY()
         {
 
@@ -282,6 +282,7 @@ namespace VIM
             }
 
         }
+        #endregion
 
         #region Image Capture method
         private void CaptureMethod()
@@ -307,16 +308,8 @@ namespace VIM
                     Console.WriteLine($"Image Taken successfully. Time Taken: {stopwatch.ElapsedMilliseconds} ms");
 
                     displayFlag = true;
-                    //stopwatch.Start();
-                    //PyImageResizing(@"D:\VIM_001_\resize1.py");
-
-                    //PyImageProcessing(@"D:\VIM_001_\brown_bg_removal.py");
-
-                    // await Task.Run(() => PyImageProcessing(@"D:\VIM_001_\143.py"));
-                    //stopwatch.Stop();
-
-                    //Console.WriteLine($"Time Taken to run Python Code: {stopwatch.ElapsedMilliseconds} ms");
-
+                    resizeFlag = true;
+                    
                 }
 
                 else
@@ -335,6 +328,7 @@ namespace VIM
         }
         #endregion
 
+        #region Display Input Image
         private void displayImage()
         {
 
@@ -353,12 +347,13 @@ namespace VIM
                 {
                     BitmapImage bitmap = new BitmapImage(new Uri(recentFile1.FullName));
                     imgInput1.Source = bitmap;
-                    resizeFlag = true;
+                   
                 });
 
             }
 
         }
+        #endregion
 
         #region Python Image Processing method
         private void PyImageResizing(string PYfilepath)
@@ -453,6 +448,7 @@ namespace VIM
         }
         #endregion
 
+        #region Display Output Image
         private void DisplayProcessedImage(string filePath)
         {
 
@@ -480,6 +476,7 @@ namespace VIM
             }
 
         }
+        #endregion
 
         #region Image Formats
         private bool IsImageFile(string fileName)

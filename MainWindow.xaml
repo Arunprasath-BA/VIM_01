@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:VIM"
         mc:Ignorable="d"
         Title="VIM" 
@@ -27,182 +28,219 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="0" 
-                            Orientation="Horizontal">
+                <md:Card Grid.Row="0" 
+                         Background="White"
+                         UniformCornerRadius="5"
+                         md:ShadowAssist.ShadowDepth="Depth1"
+                         Margin="10 10 5 5">
 
-                    <GroupBox Header="Input Image - 1"
-                              Height="350"
-                              Width="350"
-                              Foreground="Black"
-                              BorderBrush="Black"
-                              BorderThickness="2"
-                              FontSize="15"
-                              FontWeight="DemiBold"
-                              Margin="10 10 5 5">
+                    <StackPanel Orientation="Horizontal">
 
-                        <Image Height="300"
-                               Width="300"
-                               x:Name="imgInput1"/>
+                        <GroupBox Header="Input Image - 1"
+                                  Height="350"
+                                  Width="350"
+                                  Foreground="Black"
+                                  BorderBrush="Black"
+                                  BorderThickness="2"
+                                  FontSize="15"
+                                  FontWeight="DemiBold"
+                                  Margin="10 10 5 10"
+                                  Style="{x:Null}">
 
-                    </GroupBox>
+                            <Image Height="300"
+                                   Width="300"
+                                   x:Name="imgInput1"/>
 
-                    <GroupBox Header="Output Image - 1"
-                              Height="350"
-                              Width="350"
-                              Foreground="Black"
-                              BorderBrush="Black"
-                              BorderThickness="2"
-                              FontSize="15"
-                              FontWeight="DemiBold"
-                              Margin="5 10 5 5">
+                        </GroupBox>
 
-                        <Image Height="300"
-                               Width="300"
-                               x:Name="imgOutput1"/>
+                        <GroupBox Header="Output Image - 1"
+                                  Height="350"
+                                  Width="350"
+                                  Foreground="Black"
+                                  BorderBrush="Black"
+                                  BorderThickness="2"
+                                  FontSize="15"
+                                  FontWeight="DemiBold"
+                                  Margin="5 10 10 10"
+                                  Style="{x:Null}">
 
-                    </GroupBox>
+                            <Image Height="300"
+                                   Width="300"
+                                   x:Name="imgOutput1"/>
 
-                </StackPanel>
+                        </GroupBox>
 
-                <StackPanel Grid.Row="1" 
-                            Orientation="Horizontal">
+                    </StackPanel>
+                
+                </md:Card>
 
-                    <GroupBox Header="Input Image - 2"
-                              Height="350"
-                              Width="350"
-                              Foreground="Black"
-                              BorderBrush="Black"
-                              BorderThickness="2"
-                              FontSize="15"
-                              FontWeight="DemiBold"
-                              Margin="10 0 5 15">
+                <md:Card Grid.Row="1" 
+                         Background="White"
+                         UniformCornerRadius="5"
+                         md:ShadowAssist.ShadowDepth="Depth1"
+                         Margin="10 5 5 10">
 
-                        <Image Height="300"
-                               Width="300"
-                               x:Name="imgInput2"/>
+                    <StackPanel Grid.Row="1" 
+                                Orientation="Horizontal">
 
-                    </GroupBox>
+                        <GroupBox Header="Input Image - 2"
+                                  Height="350"
+                                  Width="350"
+                                  Foreground="Black"
+                                  BorderBrush="Black"
+                                  BorderThickness="2"
+                                  FontSize="15"
+                                  FontWeight="DemiBold"
+                                  Margin="10 0 5 10"
+                                  Style="{x:Null}">
 
-                    <GroupBox Header="Output Image - 2"
-                              Height="350"
-                              Width="350"
-                              Foreground="Black"
-                              BorderBrush="Black"
-                              BorderThickness="2"
-                              FontSize="15"
-                              FontWeight="DemiBold"
-                              Margin="5 0 5 15">
+                            <Image Height="300"
+                                   Width="300"
+                                   x:Name="imgInput2"/>
 
-                        <Image Height="300"
-                               Width="300"
-                               x:Name="imgOutput2"/>
+                        </GroupBox>
 
-                    </GroupBox>
+                        <GroupBox Header="Output Image - 2"
+                                  Height="350"
+                                  Width="350"
+                                  Foreground="Black"
+                                  BorderBrush="Black"
+                                  BorderThickness="2"
+                                  FontSize="15"
+                                  FontWeight="DemiBold"
+                                  Margin="5 0 10 10"
+                                  Style="{x:Null}">
 
-                </StackPanel>
+                            <Image Height="300"
+                                   Width="300"
+                                   x:Name="imgOutput2"/>
+
+                        </GroupBox>
+
+                    </StackPanel>
+
+                </md:Card>
 
             </Grid>
 
             <StackPanel Grid.Column="1">
 
-                <GroupBox Header="Status"
-                          Height="150"
-                          Width="350"
-                          Foreground="Black"
-                          BorderBrush="Black"
-                          BorderThickness="2"
-                          FontSize="15"
-                          FontWeight="DemiBold"
-                          Margin="5 10 10 5">
+                <md:Card Background="White"
+                         UniformCornerRadius="5"
+                         md:ShadowAssist.ShadowDepth="Depth1"
+                         Margin="5 10 10 5">
 
-                    <StackPanel Orientation="Horizontal"
-                                HorizontalAlignment="Center">
+                    <GroupBox Header="Status"
+                              Height="150"
+                              Width="350"
+                              Foreground="Black"
+                              BorderBrush="Black"
+                              BorderThickness="2"
+                              FontSize="15"
+                              FontWeight="DemiBold"
+                              Margin="10"
+                              Style="{x:Null}">
 
-                        <GroupBox Header="Camera"
-                                  Height="80"
-                                  Width="150"
-                                  Foreground="Black"
-                                  BorderBrush="Black"
-                                  BorderThickness="1.5"
-                                  FontSize="15"
-                                  FontWeight="DemiBold">
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
 
-                            <StackPanel Orientation="Horizontal"
-                                        HorizontalAlignment="Center">
+                            <GroupBox Header="Camera"
+                                      Height="80"
+                                      Width="150"
+                                      Foreground="Black"
+                                      BorderBrush="Black"
+                                      BorderThickness="1.5"
+                                      FontSize="15"
+                                      FontWeight="DemiBold"
+                                      Style="{x:Null}">
 
-                                <Label Content="Offline"
-                                       Height="30"
-                                       Width="50"
-                                       FontSize="13"
-                                       FontWeight="DemiBold"
-                                       HorizontalContentAlignment="Right"
-                                       x:Name="lblCamera1"/>
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center">
 
-                                <Rectangle Height="30"
-                                           Width="30"
-                                           Fill="Gray"
-                                           x:Name="rectCamera1"
-                                           Margin="5 0 0 0"/>
+                                    <Label Content="Offline"
+                                           Height="30"
+                                           Width="50"
+                                           FontSize="13"
+                                           FontWeight="DemiBold"
+                                           HorizontalContentAlignment="Right"
+                                           x:Name="lblCamera1"/>
 
-                            </StackPanel>
+                                    <Rectangle Height="30"
+                                               Width="30"
+                                               Fill="Gray"
+                                               x:Name="rectCamera1"
+                                               Margin="5 0 0 0"/>
 
-                        </GroupBox>
+                                </StackPanel>
 
-                        <GroupBox Header="Controller"
-                                  Height="80"
-                                  Width="150"
-                                  Foreground="Black"
-                                  BorderBrush="Black"
-                                  BorderThickness="1.5"
-                                  FontSize="15"
-                                  FontWeight="DemiBold"
-                                  Margin="10 0 0 0">
+                            </GroupBox>
 
-                            <StackPanel Orientation="Horizontal"
-                                        HorizontalAlignment="Center">
+                            <GroupBox Header="Controller"
+                                      Height="80"
+                                      Width="150"
+                                      Foreground="Black"
+                                      BorderBrush="Black"
+                                      BorderThickness="1.5"
+                                      FontSize="15"
+                                      FontWeight="DemiBold"
+                                      Margin="10 0 0 0"
+                                      Style="{x:Null}">
 
-                                <Label Content="Offline"
-                                       Height="30"
-                                       Width="50"
-                                       FontSize="13"
-                                       FontWeight="DemiBold"
-                                       HorizontalContentAlignment="Right"
-                                       x:Name="lblCtrlr"/>
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center">
 
-                                <Rectangle Height="30"
-                                           Width="30"
-                                           Fill="Gray"
-                                           x:Name="rectCtrlr"
-                                           Margin="5 0 0 0"/>
+                                    <Label Content="Offline"
+                                           Height="30"
+                                           Width="50"
+                                           FontSize="13"
+                                           FontWeight="DemiBold"
+                                           HorizontalContentAlignment="Right"
+                                           x:Name="lblCtrlr"/>
 
-                            </StackPanel>
+                                    <Rectangle Height="30"
+                                               Width="30"
+                                               Fill="Gray"
+                                               x:Name="rectCtrlr"
+                                               Margin="5 0 0 0"/>
 
-                        </GroupBox>
+                                </StackPanel>
 
-                    </StackPanel>
+                            </GroupBox>
 
-                </GroupBox>
+                        </StackPanel>
 
-                <GroupBox Header="Detection"
-                          Height="550"
-                          Width="350"
-                          Foreground="Black"
-                          BorderBrush="Black"
-                          BorderThickness="2"
-                          FontSize="15"
-                          FontWeight="DemiBold"
-                          Margin="5 0 10 15">
+                    </GroupBox>
 
-                    <StackPanel VerticalAlignment="Center">
+                </md:Card>
 
-                        <!--<Button Content="Capture"
-                                Height="30"
-                                Width="80"
-                                Click="Button_Click"/>-->
+                <md:Card Background="White"
+                         UniformCornerRadius="5"
+                         md:ShadowAssist.ShadowDepth="Depth1"
+                         Margin="5 5 10 10">
 
-                    </StackPanel>
+                    <GroupBox Header="Detection"
+                              Height="550"
+                              Width="350"
+                              Foreground="Black"
+                              BorderBrush="Black"
+                              BorderThickness="2"
+                              FontSize="15"
+                              FontWeight="DemiBold"
+                              Margin="10"
+                              Style="{x:Null}">
 
-                </GroupBox>
+                        <StackPanel VerticalAlignment="Center">
+
+                            <!--<Button Content="Capture"
+                                        Height="30"
+                                        Width="80"
+                                        Click="Button_Click"/>-->
+
+                        </StackPanel>
+
+                    </GroupBox>
+
+                </md:Card>
 
             </StackPanel>
 
